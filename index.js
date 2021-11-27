@@ -62,7 +62,7 @@ const jd_price = async () => {
             await Promise.all([
                 page.setUserAgent(userAgent.randomByRegex('iPhone')),
                 page.setJavaScriptEnabled(true), //  允许执行 js 脚本
-                page.goto(indexUrl, {
+                page.goto('https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu', {
                     waitUntil: 'networkidle0',
                 }),
                 page.waitForTimeout(2000),
