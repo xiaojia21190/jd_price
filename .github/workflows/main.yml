@@ -1,0 +1,26 @@
+name: jd_price
+
+on:
+    push:
+        branches: [master]
+    schedule:
+        - cron: '0 0,6,12,18 * * *'
+
+jobs:
+    fetch-top-posts:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 12.x
+            - name: npm install
+              run: npm install --only=prod
+              working-directory: .
+            - name: fetch
+              run: node app.js
+              working-directory: .
+              # for github app auth
+              env:
+                  Authorization: ${{ secrets.Authorization }}
