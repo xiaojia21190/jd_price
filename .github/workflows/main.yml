@@ -1,10 +1,8 @@
 name: jd_price
 
 on:
-    push:
-        branches: [master]
     schedule:
-        - cron: '0 0,6,12,18 * * *'
+        - cron: '0 21,4,14 * * *'
 
 jobs:
     fetch-top-posts:
