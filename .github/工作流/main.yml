@@ -5,6 +5,7 @@ on:
         - cron: '0 16,4 * * *'
     
     workflow_dispatch:
+
 jobs:
     fetch-top-posts:
         runs-on: ubuntu-latest
