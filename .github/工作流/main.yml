@@ -2,8 +2,8 @@ name: jd_price
 
 on:
     schedule:
-        - cron: '0 21,4,14 * * *'
-
+        - cron: '0 16,4 * * *'
+    workflow_dispatch:
 jobs:
     fetch-top-posts:
         runs-on: ubuntu-latest
