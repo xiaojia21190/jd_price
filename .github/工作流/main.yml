@@ -3,6 +3,7 @@ name: jd_price
 on:
     schedule:
         - cron: '0 16,4 * * *'
+    
     workflow_dispatch:
 jobs:
     fetch-top-posts:
