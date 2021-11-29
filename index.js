@@ -2,10 +2,10 @@ const axios = require('axios').default;
 const puppeteer = require('puppeteer');
 const userAgent = require('./user_agents');
 const iPhone = puppeteer.devices['iPhone 6'];
+const { getCookie } = require('./jdCookie');
 
 const jd_price = async () => {
-    let res = await axios.get(process.env.getCookie);
-    let CookieJDsa = res.data.result;
+    let CookieJDsa = await getCookie();
     const brower = await puppeteer.launch({
         headless: true,
         args: [
