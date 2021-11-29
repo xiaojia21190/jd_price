@@ -26,8 +26,8 @@ cron "0 7,19 * * *" script-path=jd_speed_sign.js,tag=京东极速版
 const $ = new Env('京东极速版');
 const JD_API_HOST = 'https://api.m.jd.com/',
     actCode = 'visa-card-001';
-
-let cookiesArr = [process.env.ck],
+let args = process.argv.slice(2);
+let cookiesArr = [args[0]],
     cookie = '',
     message;
 

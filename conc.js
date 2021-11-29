@@ -5,7 +5,7 @@ const concCk = async () => {
     let cks = await getCookie();
     for (let i = 0; i < cks.length; i++) {
         const element = cks[i];
-        var workerProcess = child_process.exec(`node jd_speed_sign.js ck=${element}`, function (err, stdout, stderr) {
+        var workerProcess = child_process.exec(`node jd_speed_sign.js ${element}`, function (err, stdout, stderr) {
             if (!err) {
                 //stdout输出结果，stderr输出错误
                 console.log('stdout:', stdout);
