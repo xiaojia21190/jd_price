@@ -20,4 +20,4 @@ const concCk = async () => {
     }
 };
 
-module.exports = { concCk };
+concCk()
