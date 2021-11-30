@@ -30,13 +30,14 @@ let cookiesArr = [],
     cookie = '',
     message;
 
-let cks = await getCookie();
-for (let i = 0; i < cks.length; i++) {
-    const element = cks[i];
-    cookiesArr.push(element.value);
-}
 
 !(async () => {
+    let cks = await getCookie();
+	for (let i = 0; i < cks.length; i++) {
+		const element = cks[i];
+		cookiesArr.push(element.value);
+	}
+
     if (!cookiesArr[0]) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { 'open-url': 'https://bean.m.jd.com/bean/signIndex.action' });
         return;
