@@ -20,4 +20,4 @@ const concCk = async () => {
     }
 };
 
-concCk()
+concCk();
