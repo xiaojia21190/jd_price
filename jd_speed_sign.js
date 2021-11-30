@@ -26,10 +26,14 @@ cron "0 7,19 * * *" script-path=jd_speed_sign.js,tag=京东极速版
 const $ = new Env('京东极速版');
 const JD_API_HOST = 'https://api.m.jd.com/',
     actCode = 'visa-card-001';
-let args = process.argv.slice(2);
-let cookiesArr = [args[0]],
+let cookiesArr = [],
     cookie = '',
     message;
+
+for (let i = 0; i < cks.length; i++) {
+    const element = cks[i];
+    cookiesArr.push(element.value);
+}
 
 !(async () => {
     if (!cookiesArr[0]) {
@@ -46,8 +50,8 @@ let cookiesArr = [args[0]],
             message = '';
             await TotalBean();
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
-            await jdGlobal();
-            await $.wait(2 * 1000);
+            jdGlobal();
+            await $.wait(5 * 1000);
         }
     }
 })();

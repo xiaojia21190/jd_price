@@ -19,7 +19,7 @@ jobs:
               run: npm install --only=prod
               working-directory: .
             - name: fetch
-              run: node conc.js
+              run: node jd_speed_sign.js
               working-directory: .
               # for github app auth
               env:
