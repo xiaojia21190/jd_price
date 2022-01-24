@@ -23,6 +23,8 @@ jobs:
               working-directory: .
               # for github app auth
               env:
-                  getCookie: ${{ secrets.getCookie }}
+                  client_url: ${{ secrets.client_url }}
+                  client_secret: ${{ secrets.client_secret }}
+                  client_id: ${{ secrets.client_id }}
                   token: ${{ secrets.token }}
                   topic: ${{ secrets.topic }}
