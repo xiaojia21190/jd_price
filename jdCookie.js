@@ -25,7 +25,7 @@ const getToken = async () => {
     } catch (error) {
         console.log(error);
     }
-    return body.data.token;
+    return body.data.data.token;
 };
 
 module.exports = { getCookie, getToken };
