@@ -19,7 +19,7 @@ jobs:
               run: npm install --only=prod
               working-directory: .
             - name: fetch
-              run: node index.js
+              run: node jd_hb.js
               working-directory: .
               # for github app auth
               env:
