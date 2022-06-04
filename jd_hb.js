@@ -73,6 +73,7 @@ const jd_hb = async () => {
                 } else {
                     break
                 }
+                await page.waitForTimeout(2000);
             }
 
             await page.close()
